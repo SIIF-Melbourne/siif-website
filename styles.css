@@ -81,14 +81,55 @@ header nav ul li a {
     color: white;
 }
 
+.Milestones {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 80vw;
+}
+
+.Milestones h1 {
+    grid-column: span 3;
+    text-align: center;
+    font-size: 8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item {
+    text-align: center
+}
+
+.Milestones figure {
+    font-size: 5rem;
+    font-weight: bold;
+    margin: 0;
+    color: #4144ec88;
+}
+
+.Milestones p {
+    font-size: 2rem;
+    margin: 0;
+    color: #666;
+    font-weight: normal;
+}
+
 footer {
-    background-color: #333;
+    margin-top: 20vh;
+    font-size: 2rem;
+    background-color: #3a445f;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: fixed;
     width: 100%;
-    height: 5vh;
+    height: 10vh;
     bottom: 0;
-    opacity: 0.5;
 }
