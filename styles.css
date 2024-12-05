@@ -105,7 +105,7 @@ header nav ul li a {
 }
 
 .item {
-    text-align: center
+    text-align: center;
 }
 
 .Milestones figure {
@@ -123,13 +123,50 @@ header nav ul li a {
 }
 
 footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    bottom: 0;
     margin-top: 20vh;
-    font-size: 2rem;
     background-color: #3a445f;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    width: 100%;
+    /* margin: 20px auto; */
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 5vw;
+}
+
+.UniMelb-Logo {
     height: 10vh;
-    bottom: 0;
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+    text-align: left;
+}
+
+.footer-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 5vw;
+}
+
+.social-icon i {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover i {
+    transform: scale(1.1);
 }
