@@ -10,7 +10,7 @@ body {
 }*/
 
 header {
-    background-color: #333;
+    background-color: #3a445f;
     color: white;
     padding: 10px 0;
     opacity: 0.8;
@@ -22,7 +22,7 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 header nav ul li {
@@ -39,7 +39,7 @@ header nav ul li a {
 }
 
 .Logo {
-    height: 15vh; /* Determines header height */
+    height: 10vh; /* Determines header height */
 }
 
 .background-image {
@@ -53,11 +53,32 @@ header nav ul li a {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero p{
-    font-size: 1.2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: gray;
+}
+
+.hero button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero button:hover {
+    background-color: black;
+    color: white;
 }
 
 footer {
