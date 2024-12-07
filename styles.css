@@ -12,23 +12,28 @@ body {
 header {
     color: white;
     align-items: center;
-}
-
-header nav ul {
     background-color: #3a445f;
     opacity: 0.8;
+}
+
+.Logo {
+    height: 10vh; /* Determines header height */
+}
+
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
-header nav ul li {
+.menu li {
     margin: 0 3%;
 }
 
-header nav ul li a {
+.menu a {
     color: white;
     text-decoration: none;
     font-size: 24px;
@@ -37,8 +42,19 @@ header nav ul li a {
     align-items: center; /* Vertically center the content */
 }
 
-.Logo {
-    height: 10vh; /* Determines header height */
+.submenu {
+    display: none;
+    top: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    list-style-type: none;
+    background-color: #444;
+}
+
+.menu-item:hover .submenu {
+    display: block;
 }
 
 footer {
@@ -243,9 +259,12 @@ footer {
 }
 
 .about-text button:hover {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     opacity: 1;
+    border: 2px solid black;
+    padding: 16px 32px;
+    font-size: 25.5px;
 }
 
 .Our-Story {
