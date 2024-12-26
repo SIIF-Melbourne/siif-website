@@ -7,6 +7,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -203,12 +206,6 @@ footer {
     font-weight: normal;
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .about-intro {
     color: white;
     display: flex;  /* Use flexbox for centering */
@@ -267,14 +264,14 @@ footer {
     font-size: 25.5px;
 }
 
-.Our-Story {
+.body-text {
     display: flex;
     flex-direction: column;
     width: 60%;
     margin-bottom: 5%;
 }
 
-.Our-Story h1 {
+.body-text h1 {
     color: navy;
     text-align: center;
     font-size: 50px;
@@ -330,3 +327,41 @@ footer {
     font-size: 30px;
     margin: 5% auto;
 }
+
+.committee-intro {
+    background-image: url("Images/SiiF-Logo.png");
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+}
+
+.committee-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 80%;
+    flex-grow: 1;
+}
+
+/*
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-image: url("Images/SiiF-Backdrop");
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 43.9vw;
+    margin-bottom: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8)
+*/
