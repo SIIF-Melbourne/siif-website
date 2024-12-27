@@ -34,6 +34,7 @@ header {
 
 .menu li {
     margin: 0 3%;
+    position: relative;
 }
 
 .menu a {
@@ -49,11 +50,20 @@ header {
     display: none;
     top: 100%;
     position: absolute;
+    right: 0;
     margin: 0;
     padding: 0;
-    width: 200px;
+    width: auto;
+    min-width: 200px;
     list-style-type: none;
     background-color: #444;
+    white-space: nowrap;
+    text-align: right;
+}
+
+.submenu li {
+    padding: 0px 15px;
+    text-align: right;
 }
 
 .menu-item:hover .submenu {
@@ -117,9 +127,16 @@ footer {
     transform: scale(1.1);
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .index-intro {
     color: white;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     background-image: url("Images/SiiF-Backdrop");
     background-position:center;
     background-size:cover;
@@ -127,28 +144,87 @@ footer {
     height: 43.9vw;
 }
 
-.hero {
+.index-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.index-text h1 {
+    font-size: 4rem;
+}
+
+.index-text button {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 64px;
+    padding: 15px 30px;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.index-text button:hover {
+    background-color: lightgray;
+}
+
+.index-about {
     color: #3a445f;
     padding: 50px 20px;
     text-align: center;
+    margin-bottom: 64px;
 }
 
-.hero h1 {
-    font-size: 5rem;
+.index-about h1 {
+    font-size: 4rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 5%;
+    margin-bottom: 48px;
 }
 
-.hero p {
+.index-about p {
     font-size: 2rem;
-    font-weight: bold;
-    color: gray;
-    margin-bottom: 5%;
+    color: rgba(0, 0, 0, 0.66);
+    margin-bottom: 48px;
 }
 
-.hero button {
+.milestones {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 20px auto;
+    max-width: 60%;
+    margin-bottom: 48px;
+}
+
+.item {
+    text-align: center;
+    gap: 8px;
+}
+
+.milestones figure {
+    font-size: 3rem;
+    margin: 0;
+    color: #4144ecd2;
+    margin-bottom: 5px;
+}
+
+.milestones p {
+    font-size: 1rem;
+    margin: 0;
+    color: #666;
+    font-weight: normal;
+}
+
+.white-black-pill {
     border: 2px solid black;
     background-color: white;
     padding: 10px 20px;
@@ -157,53 +233,45 @@ footer {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    border-radius: 32px;
 }
 
-.hero button:hover {
+.white-black-pill:hover {
     background-color: black;
     color: white;
 }
 
-.Milestones {
+.index-publications {
+    width: 80%;
+    background-color: lightblue;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-    margin: 20px auto;
-    max-width: 80vw;
-    margin-bottom: 20vh;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 48px;
 }
 
-.Milestones h1 {
-    grid-column: span 3;
-    text-align: center;
-    font-size: 8rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: #333;
+.index-publications div {
+    align-items: center;
+    justify-content: center;
+    margin: 48px;
 }
 
-.column {
+.index-publications-examples {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.index-publications-examples img {
+    width: 150px;
+}
+
+.index-publications-text {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-
-.item {
-    text-align: center;
-}
-
-.Milestones figure {
-    font-size: 5rem;
-    font-weight: bold;
-    margin: 0;
-    color: #4144ec88;
-}
-
-.Milestones p {
-    font-size: 2rem;
-    margin: 0;
-    color: #666;
-    font-weight: normal;
+    justify-content: center;
+    gap: 16px;
 }
 
 .about-intro {
@@ -390,6 +458,7 @@ footer {
 .committee h1 {
     text-align: center;
     font-size: 2rem;
+    margin-top: 10%;
 }
 
 .committee-member {
@@ -418,4 +487,15 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
+}
+
+.publications-intro {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.publications-text {
+    width: 80%;
+    text-align: center;
 }
