@@ -745,8 +745,8 @@ main {
 label {
     font-size: 24px;
     font-weight: bold;
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
 
 select,
@@ -756,6 +756,7 @@ textarea,
 .login button {
     width: 100%;
     padding: 10px 20px;
+    resize: none;
     text-align: left;
     font-size: 16px;
     margin-bottom: 24px;
