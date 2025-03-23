@@ -778,3 +778,15 @@ textarea,
     font-size: 32px;
     text-align: center;
 }
+
+.instagram-posts-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.instagram-post {
+    flex: 1 1 calc(33.333% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
+}
