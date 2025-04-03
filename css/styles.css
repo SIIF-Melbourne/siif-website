@@ -780,13 +780,8 @@ textarea,
 }
 
 .instagram-posts-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.instagram-post {
-    flex: 1 1 calc(33.333% - 10px);
-    margin: 5px;
-    box-sizing: border-box;
+    display: flex; /* Arrange items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    gap: 16px; /* Add space between items */
+    justify-content: center; /* Center the items horizontally */
 }
