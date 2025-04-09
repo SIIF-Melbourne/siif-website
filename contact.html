@@ -9,12 +9,7 @@
     <script src="/scripts/header.js" defer></script>
     <script src="/scripts/footer.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS Public Key
-        })();
-    </script>
-    <script type="module" src="/scripts/contact.js" defer></script>
+    <script src="/scripts/email.js" defer></script>
 </head>
 
 <body class="contact-page">
@@ -65,7 +60,7 @@
                 <label for="message">Message</label>
                 <textarea rows="8" id="message" name="message" placeholder="Your message" required></textarea>
 
-                <button type="button" id="submitButton">Submit</button>
+                <button type="submit" id="submitButton">Submit</button>
                 <p id="successMessage" style="color: green; display: none;">Your message has been sent successfully!</p>
                 <p id="errorMessage" style="color: red; display: none;">Failed to send your message. Please try again.</p>
             </form>

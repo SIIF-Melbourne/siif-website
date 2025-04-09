@@ -1,3 +1,5 @@
+// TESTING
+
 document.getElementById('submitButton').addEventListener('click', async () => {
     const form = document.getElementById('enquiryForm');
     const successMessage = document.getElementById('successMessage');
