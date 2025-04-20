@@ -230,7 +230,7 @@ main {
     color: white;
     display: flex;
     flex-direction: column;
-    background-image: url("Images/SiiF-Backdrop");
+    background-image: url("https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//SiiF-Backdrop");
     background-position: center;
     background-size: cover;
     width: 100vw;
@@ -446,7 +446,7 @@ main {
     display: flex;
     /* Use flexbox for centering */
     flex-direction: column;
-    background-image: url("Images/SiiF-Backdrop");
+    background-image: url("https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//SiiF-Backdrop");
     background-position: center;
     background-size: cover;
     width: 100vw;
@@ -547,7 +547,7 @@ main {
 .President-Statement {
     display: flex;
     width: 60%;
-    background-image: url("Images/SiiF-Logo.png");
+    background-image: url("https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//SiiF-Logo.png");
     background-size: contain;
     margin-bottom: 10%;
 }
@@ -578,7 +578,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('Images/Committee.webp');
+    background-image: url('https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/committee/Committee.webp');
     background-size: cover;
     background-position: center;
     filter: blur(8px);
@@ -683,7 +683,7 @@ main {
 
 .contact-page {
     background-color: #293453;
-    background-image: url("Images/Committee.webp");
+    background-image: url("https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/committee/Committee.webp");
     background-size: 100% auto;
     background-repeat: repeat;
 }
