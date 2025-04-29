@@ -6,4 +6,3 @@
    ```env
    SUPABASE_URL=your-supabase-url
    SUPABASE_ANON_KEY=your-anon-key
-

@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications</title>
-    <link rel="stylesheet" href="../css/styles.css">
-    <script src="../scripts/header.js" defer></script>
-    <script src="../scripts/footer.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/header.js" defer></script>
+    <script src="scripts/footer.js" defer></script>
+    <style>
+        .publication-tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        
+        .publication-tab {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        .publication-tab:hover {
+            color: rgb(15, 20, 36);
+        }
+        
+        .publication-tab.active {
+            color: rgb(15, 20, 36);
+            border-bottom: 3px solid rgb(15, 20, 36);
+        }
+        
+        .publication-content {
+            display: none;
+        }
+        
+        .publication-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <section class="publications-intro">
@@ -14,36 +59,114 @@
         <h1>Publications Archive</h1>
     </section>
 
-    <section class="publications-table">
+    <main>
+        <div class="publication-tabs">
+            <button class="publication-tab active" data-content="interest-articles">Articles</button>
+            <button class="publication-tab" data-content="macro-updates">Macro Update Archive</button>
+        </div>
         
-        <table>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Date</th>
-                    <th>Link</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Macro Market Update Template</td>
-                    <td>Month 00, 2025</td>
-                    <td><a href="pdfs/Market Update Template.pdf" target="_blank">View PDF</a></td>
-                </tr>
-                <tr>
-                    <td>Macro Market Update</td>
-                    <td>March 31, 2025</td>
-                    <td><a href="https://www.instagram.com/p/DH2fz0qT3hB/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
-                </tr>
-                <tr>
-                    <td>Macro Market Update</td>
-                    <td>March 24, 2025</td>
-                    <td><a href="https://www.instagram.com/p/DHkwIrNTd5a/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <!-- Interest Articles Content -->
+        <div id="interest-articles" class="publication-content active">
+            <section class="articles-section">
+                <h2>Featured Articles</h2>
+                <div class="article-cards">
+                    <div class="article-card">
+                        <div class="article-image">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <span class="article-category">Interest Piece</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">Guide</h3>
+                            <span class="article-date">Example for publications team</span>
+                            <a href="publications/guide.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-image">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <span class="article-category">Interest Piece</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">LOREM IPSUM</h3>
+                            <span class="article-date">May 1, 2025</span>
+                            <a href="publications/example.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                    <div class="article-card">
+                        <div class="article-image">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <span class="article-category">Interest Piece</span>
+                        </div>
+                        <div class="article-content">
+                            <h3 class="article-title">LOREM IPSUM</h3>
+                            <span class="article-date">May 1, 2025</span>
+                            <a href="publications/example.html" class="read-more">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Macro Updates Content -->
+        <div id="macro-updates" class="publication-content">
+            <section class="publications-table">
+                <h2>Market Updates</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Macro Market Update Template</td>
+                            <td>Month 00, 2025</td>
+                            <td><a href="pdfs/Market Update Template.pdf" target="_blank">View PDF</a></td>
+                        </tr>
+                        <tr>
+                            <td>Macro Market Update (Title)</td>
+                            <td>April 7, 2025</td>
+                            <td><a href="https://www.instagram.com/p/DIIQjRATEiX/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
+                        </tr>
+                        <tr>
+                            <td>Macro Market Update (Title)</td>
+                            <td>March 31, 2025</td>
+                            <td><a href="https://www.instagram.com/p/DH2fz0qT3hB/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
+                        </tr>
+                        <tr>
+                            <td>Macro Market Update (Title)</td>
+                            <td>March 24, 2025</td>
+                            <td><a href="https://www.instagram.com/p/DHkwIrNTd5a/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </main>
 
     <footer></footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.publication-tab');
+            const contentContainers = document.querySelectorAll('.publication-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    contentContainers.forEach(container => {
+                        container.classList.remove('active');
+                    });
+                    
+                    const contentId = this.getAttribute('data-content');
+                    document.getElementById(contentId).classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
