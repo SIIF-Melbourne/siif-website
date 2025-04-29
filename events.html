@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flagship Events - SiiF</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/scripts/header.js" defer></script>
+    <script src="/scripts/footer.js" defer></script>
+    <style>
+        .events-hero {
+            background-color: rgb(15, 20, 36);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+            width: 100%;
+        }
+        
+        .events-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .events-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .events-section {
+            margin: 0 auto 80px;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        
+        /* Tab navigation */
+        .event-tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        
+        .event-tab {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #666;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+        
+        .event-tab:hover {
+            color: rgb(15, 20, 36);
+        }
+        
+        .event-tab.active {
+            color: rgb(15, 20, 36);
+            border-bottom: 3px solid rgb(15, 20, 36);
+        }
+        
+        /* Event content */
+        .event-content-container {
+            display: none;
+        }
+        
+        .event-content-container.active {
+            display: flex;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .event-content-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            width: 100%;
+        }
+        
+        .event-image-container {
+            flex: 1;
+            max-width: 45%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .event-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .event-category {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: rgb(15, 20, 36);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            align-self: flex-start;
+        }
+        
+        .event-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        
+        .event-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .event-link {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: rgb(15, 20, 36);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+        
+        .event-link:hover {
+            background-color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .event-content-wrapper {
+                flex-direction: column;
+            }
+            
+            .event-image-container {
+                max-width: 100%;
+                height: 250px;
+            }
+            
+            .events-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    
+    <div class="events-hero">
+        <h1>Our Flagship Events</h1>
+        <p>Discover SIIF's premier events that connect students with industry professionals and provide valuable insights into the world of investments and finance.</p>
+    </div>
+    
+    <main>
+        <section class="events-section">
+            <div class="event-tabs">
+                <button class="event-tab active" data-event="corporate-cocktails">Corporate Cocktails</button>
+                <button class="event-tab" data-event="example-event">Another Event</button>
+            </div>
+            
+            <div id="corporate-cocktails" class="event-content-container active">
+                <div class="event-content">
+                    <div class="event-header">
+                        <span class="event-category">Networking</span>
+                        <h2 class="event-title">Corporate Cocktails</h2>
+                    </div>
+                    
+                    <section class="event-description-section">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </section>
+                    
+                    <section class="event-gallery">
+                        <!-- <h3>Gallery</h3> -->
+                        <div class="gallery-container">
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Corporate Cocktails Event">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <div id="example-event" class="event-content-container">
+                <div class="event-content">
+                    <div class="event-header">
+                        <span class="event-category">Workshop</span>
+                        <h2 class="event-title">Investing 101</h2>
+                    </div>
+                    
+                    <section class="event-description-section">
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    </section>
+                    
+                    <section class="event-gallery">
+                        <!-- <h3>Gallery</h3> -->
+                        <div class="gallery-container">
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Investing 101 Workshop">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Investing 101 Workshop">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Investing 101 Workshop">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Investing 101 Workshop">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+    
+    <footer></footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.event-tab');
+            const contentContainers = document.querySelectorAll('.event-content-container');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    
+                    contentContainers.forEach(container => {
+                        container.classList.remove('active');
+                    });
+                    
+                    const eventId = this.getAttribute('data-event');
+                    document.getElementById(eventId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

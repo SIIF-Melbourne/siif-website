@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="header.js" defer></script>
-    <script src="footer.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/scripts/header.js" defer></script>
+    <script src="/scripts/footer.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script src="/scripts/email.js" defer></script>
 </head>
 
 <body class="contact-page">
@@ -24,7 +26,7 @@
                     href="https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/7509/">UMSU</a></p>
             <div class="social-media">
                 <a href="https://umsu.unimelb.edu.au/buddy-up/clubs/clubs-listing/join/7509/" class="social-icon">
-                    <img src="Images/UMSU-Logo.svg"></a>
+                    <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//UMSU-Logo.svg"></a>
             </div>
             <h2>Becoming a committee member</h2>
             <p>To become a committee member, we hold recruitment cycles in February. When they open, we will post on our
@@ -41,24 +43,27 @@
         </section>
 
         <section class="enquiry">
-            <label for="category">Category</label>
-            <select id="category" name="category" required>
-                <option disabled selected>Select</option>
-                <option value="GeneralEnquiry">General Enquiry</option>
-                <option vlaue="SponsorshipEnquiry">Sponsorship Enquiry</option>
-            </select>
+            <form id="enquiryForm">
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option disabled selected>Select</option>
+                    <option value="GeneralEnquiry">General Enquiry</option>
+                    <option value="SponsorshipEnquiry">Sponsorship Enquiry</option>
+                </select>
 
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your email address" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
 
-            <label for="message">Message</label>
-            <textarea rows="8" id="message" name="message" placeholder="Your message" required></textarea>
+                <label for="message">Message</label>
+                <textarea rows="8" id="message" name="message" placeholder="Your message" required></textarea>
 
-            <button type="submit">Submit</button>
-
+                <button type="submit" id="submitButton">Submit</button>
+                <p id="successMessage" style="color: green; display: none;">Your message has been sent successfully!</p>
+                <p id="errorMessage" style="color: red; display: none;">Failed to send your message. Please try again.</p>
+            </form>
         </section>
     </section>
 

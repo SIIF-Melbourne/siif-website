@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Guide for Content Writers - SiiF</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="scripts/header.js" defer></script>
+        <script src="scripts/footer.js" defer></script>
+    </head>
+<body>
+    <header></header>
+    
+    <article class="article-container">
+        <div class="article-header">
+            <h1>HTML Guide for Content Writers</h1>
+            <div class="article-meta">
+                <span class="article-date">April 29, 2025</span>
+            </div>
+        </div>
+        
+        <div class="article-featured-image">
+            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="HTML Formatting Guide">
+            <p class="image-caption">Basic HTML formatting can transform your content from plain text to professional publications</p>
+        </div>
+        
+        <div class="article-body">
+            <div class="article-intro">
+                <p>This guide shows you how to format your SiiF articles using simple HTML tags. You don't need to be a web developer to add professional formatting to your content.</p>
+            </div>
+            
+            <h2>Basic Text Formatting</h2>
+            
+            <h3>Paragraphs</h3>
+            <p>Text like this is a paragraph.</p>
+            <p>Use <code>&lt;p&gt;Your text here&lt;/p&gt;</code> to create paragraphs. Always place each paragraph in its own set of p tags.</p>
+            
+            <h3>Bold Text</h3>
+            <p>To make text <strong>bold like this</strong>, use: <code>&lt;strong&gt;bold like this&lt;/strong&gt;</code></p>
+            
+            <h3>Italic Text</h3>
+            <p>To make text <em>italic like this</em>, use: <code>&lt;em&gt;italic like this&lt;/em&gt;</code></p>
+            
+            <h2>Headings</h2>
+            <p>Use headings to organize your content into sections. The main article title is already an h1, so start with h2 for major sections.</p>
+            
+            <p>For a heading like the "Headings" title above, use: <code>&lt;h2&gt;Headings&lt;/h2&gt;</code></p>
+            
+            <p>For a smaller heading like "Italic Text" above, use: <code>&lt;h3&gt;Italic Text&lt;/h3&gt;</code></p>
+            
+            <h2>Lists</h2>
+            
+            <h3>Bullet Points (Unordered List)</h3>
+            <p>To create a bullet point list like this:</p>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ul>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;ul&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ul&gt;
+            </pre>
+            
+            <h3>Numbered Lists (Ordered List)</h3>
+            <p>To create a numbered list like this:</p>
+            <ol>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ol>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+            </pre>
+            
+            <h2>Quotes</h2>
+            <p>To create a quote block like this:</p>
+            
+            <blockquote>
+                "Markets can remain irrational longer than you can remain solvent."
+                <cite>- John Maynard Keynes</cite>
+            </blockquote>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;blockquote&gt;
+    "Markets can remain irrational longer than you can remain solvent."
+    &lt;cite&gt;- John Maynard Keynes&lt;/cite&gt;
+&lt;/blockquote&gt;
+            </pre>
+            
+            <h2>Links</h2>
+            <p>To create a link <a href="https://www.unimelb.edu.au">like this</a>, use:</p>
+            <p><code>&lt;a href="https://www.unimelb.edu.au"&gt;like this&lt;/a&gt;</code></p>
+            
+            <h2>Images</h2>
+            <p>To add an image:</p>
+            
+            <figure class="article-figure">
+                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Example image" class="article-chart">
+                <figcaption>Figure 1: Example chart with caption</figcaption>
+            </figure>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;figure class="article-figure"&gt;
+    &lt;img src="IMAGE-URL-HERE" alt="Description of image" class="article-chart"&gt;
+    &lt;figcaption&gt;Figure 1: Example chart with caption&lt;/figcaption&gt;
+&lt;/figure&gt;
+            </pre>
+            
+            <h2>Tables</h2>
+            <p>To create a table like this:</p>
+            
+            <table class="article-table">
+                <thead>
+                    <tr>
+                        <th>Company</th>
+                        <th>Industry</th>
+                        <th>Market Cap</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Technology</td>
+                        <td>$2.8T</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft</td>
+                        <td>Technology</td>
+                        <td>$2.5T</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;table class="article-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Company&lt;/th&gt;
+            &lt;th&gt;Industry&lt;/th&gt;
+            &lt;th&gt;Market Cap&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Apple&lt;/td&gt;
+            &lt;td&gt;Technology&lt;/td&gt;
+            &lt;td&gt;$2.8T&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Microsoft&lt;/td&gt;
+            &lt;td&gt;Technology&lt;/td&gt;
+            &lt;td&gt;$2.5T&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+            </pre>
+            
+            <h2>Highlight Boxes</h2>
+            <p>To create a callout box like this:</p>
+            
+            <div class="callout-box">
+                <h4>Important Information</h4>
+                <p>This is how you highlight important information or key takeaways in your article.</p>
+            </div>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;div class="callout-box"&gt;
+    &lt;h4&gt;Important Information&lt;/h4&gt;
+    &lt;p&gt;This is how you highlight important information or key takeaways in your article.&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+            
+            <h2>Strategy Cards</h2>
+            <p>To create strategy cards like this:</p>
+            
+            <div class="strategy-card">
+                <h3>Strategy Name</h3>
+                <p>This is where you would describe an investment strategy or concept in a visually distinct card format.</p>
+            </div>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;div class="strategy-card"&gt;
+    &lt;h3&gt;Strategy Name&lt;/h3&gt;
+    &lt;p&gt;This is where you would describe an investment strategy or concept in a visually distinct card format.&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+            
+            <h2>Conclusion Section</h2>
+            <p>To create a conclusion section like this:</p>
+            
+            <div class="article-conclusion">
+                <h3>Summary</h3>
+                <p>This is how you format a conclusion or summary section of your article, making it stand out from the main content.</p>
+            </div>
+            
+            <p>Use this code:</p>
+            <pre>
+&lt;div class="article-conclusion"&gt;
+    &lt;h3&gt;Summary&lt;/h3&gt;
+    &lt;p&gt;This is how you format a conclusion or summary section of your article, making it stand out from the main content.&lt;/p&gt;
+&lt;/div&gt;
+            </pre>
+            
+            <h2>Need Help?</h2>
+            <p>If you're having trouble with HTML formatting, contact the IT team for assistance. Remember that you can view the HTML of any existing article to see how it was created—just right-click on the page and select "View Page Source".</p>
+        </div>
+        
+        <div class="article-footer">
+            <a href="../publications.html" class="back-button">← Back to Publications</a>
+        </div>
+    </article>
+    
+    <footer></footer>
+</body>
+</html>
