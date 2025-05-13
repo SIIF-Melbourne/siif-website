@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SIIF Internship Interview Answer Guide - SiiF</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="scripts/header.js" defer></script>
+        <script src="scripts/footer.js" defer></script>
+    </head>
+<body>
+    <header></header>
+    
+    <article class="article-container">
+        <div class="article-header">
+            <h1>SIIF Internship Interview Answer Guide</h1>
+            <div class="article-meta">
+                <span class="article-date">May 13, 2025</span>
+            </div>
+        </div>
+        
+        <div class="article-featured-image">
+            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//StockPhoto.jpg" alt="DCF Model Diagram">
+            <p class="image-caption">A Discounted Cash Flow model values a company based on future cash flows. Source: SIIF Publications</p>
+        </div>
+        
+        <div class="article-body">
+            <div class="article-intro">
+                <p><strong>Walk Me Through a DCF</strong> is one of the most common technical questions in finance interviews. This guide provides you with a concise, interview-ready answer and breaks down the key concepts to help you ace this question.</p>
+            </div>
+            
+            <h2>Interview-Ready Sample Answer</h2>
+            <p>"A DCF values a company based on the Present Value of its Cash Flows and the Present Value of its Terminal Value. First, you project out a company's financials using assumptions for revenue growth, expenses and Working Capital; then you get down to Free Cash Flow for each year, which you then sum up and discount to a Net Present Value, based on your discount rate – usually the Weighted Average Cost of Capital. Once you have the present value of the Cash Flows, you determine the company's Terminal Value, using either the Multiples Method or the Gordon Growth Method, and then also discount that back to its Net Present Value using WACC. Finally, you add the two together to determine the company's Enterprise Value."</p>
+            
+            <figure class="article-figure">
+                <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//StockPhoto.jpg" alt="DCF Flowchart" class="article-chart">
+                <figcaption>Figure 1: Discounted Cash Flow (DCF) Valuation Process Flowchart</figcaption>
+            </figure>
+            
+            <h2>Breakdown of Concepts</h2>
+            
+            <div class="strategy-card">
+                <h3>Unlevered Free Cash Flow (FCF)</h3>
+                <p>Formula: FCF = EBIT × (1 − Tax Rate) + D&A − CapEx − Δ Working Capital</p>
+                <p>This measures cash available to all capital providers before debt payments.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h3>Discount Rate (WACC)</h3>
+                <p>Formula: WACC = (E/(E+D)) × RE + (D/(E+D)) × RD × (1−T)</p>
+                <p>The company's Weighted Average Cost of Capital — the blended rate of return required by both debt and equity investors.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h3>Terminal Value (TV)</h3>
+                <p>An estimate of value beyond the projection window, often accounting for the majority of the company's total value.</p>
+                
+                <h4>Gordon Growth Method:</h4>
+                <p>TV = Final Year FCF × (1+g) / (WACC−g)</p>
+                <p>Used for stable, mature companies.</p>
+                
+                <h4>Exit Multiple Method:</h4>
+                <p>TV = Final Year Metric × Chosen Multiple</p>
+                <p>(e.g., Final Year EBITDA × EV/EBITDA)</p>
+                <p>Used when there's strong market data for comparable multiples.</p>
+            </div>
+            
+            <div class="strategy-card">
+                <h3>Enterprise Value</h3>
+                <p>The total value of a business to all capital providers (debt and equity).</p>
+                <p>EV = Σ[FCFt / (1+WACC)^t] + TV / (1+WACC)^n</p>
+                <p>Sum of discounted forecasted FCFs and Terminal Value.</p>
+            </div>
+            
+            <h2>Why It's Asked</h2>
+            <p>This question tests your understanding of valuation fundamentals, your ability to think through long-term projections, and how well you grasp key financial concepts. It also gauges your technical communication skills and how clearly you can summarize a complex model.</p>
+            
+            <div class="callout-box">
+                <h4>Bonus Tip</h4>
+                <p><strong>Insight:</strong> Assumptions drive everything — revenue growth, margin expansion, CapEx intensity, and exit multiple or growth rate can all dramatically change valuation.</p>
+                <p>This is why sensitivity analysis is often included in real-world DCF models (e.g., what happens if WACC increases by 0.5%?).</p>
+            </div>
+            
+            <blockquote>
+                "Common Mistake: Confusing levered and unlevered cash flows. DCF typically uses unlevered FCF when calculating Enterprise Value."
+            </blockquote>
+            
+            <h3>Follow-Up Questions to Prepare For</h3>
+            <ul>
+                <li><strong>Why do we use WACC as the discount rate?</strong></li>
+                <li><strong>How do you calculate Cost of Equity?</strong></li>
+                <li><strong>What are signs your Terminal Value is too high?</strong></li>
+                <li><strong>What's the difference between Enterprise Value and Equity Value?</strong></li>
+            </ul>
+            
+            <div class="article-conclusion">
+                <h3>Preparing for Your Interview</h3>
+                <p>Understanding the DCF model thoroughly can be a strong differentiator in finance interviews. Practice explaining the concept concisely while demonstrating your understanding of the underlying financial principles. Remember that interviewers are looking not just for technical knowledge, but also for clarity of communication—a crucial skill in the finance industry.</p>
+            </div>
+        </div>
+        
+        <div class="related-articles">
+            <h3>Related Articles</h3>
+            <div class="related-articles-grid">
+                <a href="#" class="related-article">
+                    <h4>THIS WILL BE LINKED TO ANOTHER PAST ARTICLE</h4>
+                    <span class="related-date">April 15, 2025</span>
+                </a>
+                <a href="#" class="related-article">
+                    <h4>THIS WILL BE LINKED TO ANOTHER PAST ARTICLE</h4>
+                    <span class="related-date">April 1, 2025</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="article-footer">
+            <a href="../publications.html" class="back-button">← Back to Publications</a>
+        </div>
+    </article>
+    
+    <footer></footer>
+</body>
+</html>

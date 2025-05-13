@@ -7,51 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="scripts/header.js" defer></script>
     <script src="scripts/footer.js" defer></script>
-    <style>
-        .publication-tabs {
-            display: flex;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 30px;
-            overflow-x: auto;
-            scrollbar-width: thin;
-        }
-        
-        .publication-tab {
-            padding: 15px 25px;
-            background: none;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #666;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: all 0.3s ease;
-        }
-        
-        .publication-tab:hover {
-            color: rgb(15, 20, 36);
-        }
-        
-        .publication-tab.active {
-            color: rgb(15, 20, 36);
-            border-bottom: 3px solid rgb(15, 20, 36);
-        }
-        
-        .publication-content {
-            display: none;
-        }
-        
-        .publication-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
 </head>
 <body>
     <section class="publications-intro">
@@ -62,7 +17,7 @@
     <main>
         <div class="publication-tabs">
             <button class="publication-tab active" data-content="interest-articles">Articles</button>
-            <button class="publication-tab" data-content="macro-updates">Macro Update Archive</button>
+            <button class="publication-tab" data-content="macro-updates">Macro Market Update Archive</button>
         </div>
         
         <!-- Interest Articles Content -->
@@ -72,7 +27,7 @@
                 <div class="article-cards">
                     <div class="article-card">
                         <div class="article-image">
-                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//StockPhoto.jpg" alt="Interest rates chart">
                             <span class="article-category">Interest Piece</span>
                         </div>
                         <div class="article-content">
@@ -83,7 +38,7 @@
                     </div>
                     <div class="article-card">
                         <div class="article-image">
-                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//StockPhoto.jpg" alt="Interest rates chart">
                             <span class="article-category">Interest Piece</span>
                         </div>
                         <div class="article-content">
@@ -94,13 +49,13 @@
                     </div>
                     <div class="article-card">
                         <div class="article-image">
-                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos/publications/DUMMYIMAGE.png" alt="Interest rates chart">
+                            <img src="https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//StockPhoto.jpg" alt="Interest rates chart">
                             <span class="article-category">Interest Piece</span>
                         </div>
                         <div class="article-content">
-                            <h3 class="article-title">LOREM IPSUM</h3>
+                            <h3 class="article-title">SIIF Educational Piece</h3>
                             <span class="article-date">May 1, 2025</span>
-                            <a href="publications/example.html" class="read-more">Read Article</a>
+                            <a href="publications/example2.html" class="read-more">Read Article</a>
                         </div>
                     </div>
                 </div>
@@ -109,34 +64,39 @@
         
         <!-- Macro Updates Content -->
         <div id="macro-updates" class="publication-content">
-            <section class="publications-table">
-                <h2>Market Updates</h2>
+            <section class="publications-section">
+                <div class="disclaimer">
+                    <strong>Disclaimer:</strong> All decisions and research has been done by students. The following decisions are made with the financial objects of the fund in mind, including education. They are not financial advice.
+                </div>
+                
+                <p class="macro-description">A data-driven insight into market trends, key developments, and indicators to watch in the week ahead.</p>
+                
                 <table>
                     <thead>
                         <tr>
-                            <th>Type</th>
                             <th>Date</th>
                             <th>Link</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>Macro Market Update Template</td>
                             <td>Month 00, 2025</td>
                             <td><a href="pdfs/Market Update Template.pdf" target="_blank">View PDF</a></td>
+                        </tr> -->
+                        <tr>
+                            <td>April 28, 2025</td>
+                            <td><a href="https://www.instagram.com/p/DI-OmyLT6sR/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
                         </tr>
                         <tr>
-                            <td>Macro Market Update (Title)</td>
                             <td>April 7, 2025</td>
                             <td><a href="https://www.instagram.com/p/DIIQjRATEiX/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
                         </tr>
                         <tr>
-                            <td>Macro Market Update (Title)</td>
                             <td>March 31, 2025</td>
                             <td><a href="https://www.instagram.com/p/DH2fz0qT3hB/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
                         </tr>
                         <tr>
-                            <td>Macro Market Update (Title)</td>
                             <td>March 24, 2025</td>
                             <td><a href="https://www.instagram.com/p/DHkwIrNTd5a/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">View Instagram Post</a></td>
                         </tr>
