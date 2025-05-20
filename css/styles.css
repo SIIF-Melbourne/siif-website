@@ -144,7 +144,7 @@ footer {
     width: 100vw;
     height: auto;
     bottom: 0;
-    background-color: #3a445f;
+    background-color: #0f1320;
     color: white;
     text-align: center;
     margin-top: 48px;
@@ -633,6 +633,7 @@ main {
     width: 200px;
     height: 200px;
     object-fit: cover;
+    zoom: 1;
     margin-bottom: -1%;
     border-radius: 50%;
 }
@@ -2447,8 +2448,10 @@ blockquote cite {
 }
 
 .sponsors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
     gap: 2rem;
     margin: 3rem 0;
 }
@@ -2528,3 +2531,9 @@ blockquote cite {
         grid-template-columns: 1fr;
     }
 }
+
+.centered-text {
+    text-align: center;
+    margin: 20px 0;
+}
+
