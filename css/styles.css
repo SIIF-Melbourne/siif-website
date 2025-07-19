@@ -17,14 +17,14 @@ header {
     color: white;
     align-items: center;
     /* background-color: rgb(15, 20, 36); */
-    background-color: #0f1320;
+    background-color: #ffffff;
     opacity: 0.95;
     width: 100vw;
 }
 
 .Logo {
-    height: 96px;
-    padding-block: 24px;
+    height: 64px;
+    padding-block: 12px;
 }
 
 .menu {
@@ -32,19 +32,19 @@ header {
     margin: 0;
     padding-inline: 32px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     position: relative;
 }
 
 .menu li {
-    margin: 0 3%;
+    margin: 0 2.5rem;
     position: relative;
 }
 
 .menu a {
-    color: white;
+    color: rgb(15, 20, 36);
     text-decoration: none;
-    font-size: 24px;
+    font-size: 12px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -2372,14 +2372,10 @@ blockquote cite {
     align-items: center;
 }
 
-.values-content {
-    flex: 2;
-}
-
 .values-image {
-    flex: 1;
     max-width: 300px;
     text-align: center;
+    margin:auto;
 }
 
 .values-image img {
