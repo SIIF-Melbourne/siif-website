@@ -18,16 +18,12 @@ header {
     align-items: center;
     /* background-color: rgb(15, 20, 36); */
     background-color: #ffffff;
+    min-height: 80px;
     opacity: 0.95;
     width: 100vw;
 }
 
-.Logo {
-    height: 64px;
-    padding-block: 12px;
-}
-
-.menu {
+.desktop-menu {
     list-style-type: none;
     margin: 0;
     padding-inline: 32px;
@@ -36,12 +32,12 @@ header {
     position: relative;
 }
 
-.menu li {
+.desktop-menu li {
     margin: 0 2.5rem;
     position: relative;
 }
 
-.menu a {
+.desktop-menu a {
     color: rgb(15, 20, 36);
     text-decoration: none;
     font-size: 12px;
@@ -50,27 +46,166 @@ header {
     align-items: center;
 }
 
-.submenu {
+.Logo {
+    height: 64px;
+    padding-block: 12px;
+}
+
+.mobile-menu {
     display: none;
-    top: 100%;
-    position: absolute;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    width: auto;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
     list-style-type: none;
-    background-color: rgba(58, 68, 95, 0.8);
-    white-space: nowrap;
+    margin: 0;
+    padding-inline: 32px;
+    justify-content: flex-start;
+    position: relative;
 }
 
-.submenu li {
-    display: flex;
-    justify-content: flex-end;
-    padding-left: 24px;
+.menu-overlay {
+    display: none;
 }
 
-.menu-item:hover .submenu {
-    display: block;
+.hamburger, .mobile-menu-close-button {
+    display: none;
+}
+
+body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .mobile-menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        z-index: 9999;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 2rem;
+    }
+
+    .mobile-menu-overlay.active {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 10000;
+    }
+
+    body.mobile-menu-open {
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    .mobile-menu {
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        align-items: center;
+        gap: 2rem;
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .mobile-menu-overlay.active .mobile-menu {
+        display: flex;
+    }
+
+    .mobile-menu li {
+        margin: 0 2.5rem;
+        position: relative;
+    }
+
+    .mobile-menu a {
+        color: rgb(15, 20, 36);
+        text-decoration: none;
+        font-size: 12px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .submenu {
+        display: none;
+        top: 100%;
+        position: absolute;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        width: auto;
+        list-style-type: none;
+        background-color: rgba(58, 68, 95, 0.8);
+        white-space: nowrap;
+    }
+
+    .submenu li {
+        display: flex;
+        justify-content: flex-end;
+        padding-left: 24px;
+    }
+
+    .menu-item:hover .submenu {
+        display: block;
+    }
+
+    .Logo {
+        height: 64px;
+        padding-block: 12px;
+    }
+    
+    .hamburger, .mobile-menu-close-button {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        background: none;
+        border: none;
+        font-size: 28px;
+        cursor: pointer;
+        z-index: 10000;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.hide {
+        display: none;
+    }
+
+    .mobile-menu-close-button {
+        display: none;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-size: 32px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: black;
+    }
+
+    .mobile-menu-overlay.active .mobile-menu-close-button {
+        display: block;
+    }
 }
 
 #join-committee {
