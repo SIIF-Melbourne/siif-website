@@ -93,7 +93,6 @@ body.menu-open {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 2rem;
     }
 
     .mobile-menu-overlay.active {
@@ -138,7 +137,8 @@ body.menu-open {
     .mobile-menu a {
         color: rgb(15, 20, 36);
         text-decoration: none;
-        font-size: 12px;
+        font-size: 1.5rem;
+        margin: 0.5rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -168,7 +168,7 @@ body.menu-open {
     }
 
     .Logo {
-        height: 64px;
+        height: 128px;
         padding-block: 12px;
     }
     
@@ -2410,16 +2410,15 @@ blockquote cite {
     width: 100%;
 }
 
-.about-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
 .about-hero p {
-    font-size: 1.2rem;
-    max-width: 800px;
+    font-size: 1.6rem;
+    max-width: 80%;
     margin: 0 auto;
     line-height: 1.6;
+}
+
+.about-content p {
+    font-size: 1.5rem;
 }
 
 .about-section {
@@ -2452,7 +2451,6 @@ blockquote cite {
     color: #333;
     line-height: 1.8;
     margin-bottom: 20px;
-    font-size: 1.1rem;
 }
 
 .about-mission {
@@ -2490,7 +2488,6 @@ blockquote cite {
 .mission-content p {
     color: #333;
     line-height: 1.8;
-    font-size: 1.1rem;
 }
 
 .about-goals h2,
@@ -2526,7 +2523,7 @@ blockquote cite {
 .goal-card h3,
 .pillar-card h3 {
     color: rgb(15, 20, 36);
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #eee;
@@ -2543,6 +2540,7 @@ blockquote cite {
     flex-direction: row;
     gap: 40px;
     align-items: center;
+    font-size: 1.5rem;
 }
 
 .values-image {
@@ -2565,7 +2563,6 @@ blockquote cite {
     margin-bottom: 15px;
     color: #333;
     line-height: 1.6;
-    font-size: 1.1rem;
 }
 
 .values-list li span {
@@ -2613,6 +2610,7 @@ blockquote cite {
 .about-sponsors h2 {
     text-align: center;
     margin-bottom: 1.5rem;
+    font-size: 2rem;
 }
 
 .sponsors-grid {
@@ -2672,6 +2670,7 @@ blockquote cite {
     padding: 1.5rem;
     background-color: #e9ecef;
     border-radius: 8px;
+    font-size: 1.5rem;
 }
 
 .become-sponsor h3 {
