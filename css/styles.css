@@ -351,6 +351,44 @@ footer {
     transform: scale(1.2);
 }
 
+@media (max-width: 768px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+    }
+
+
+    .footer-text p {
+        text-align: center;
+    }
+
+    .footer-right {
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-right: 0;
+        gap: 16px;
+    }
+
+    .UniMelb-Logo {
+        height: 80px;
+    }
+
+    .social-icon i, .social-icon img {
+        font-size: 32px;
+        height: 32px;
+    }
+}
+
 main {
     display: flex;
     flex-direction: column;
