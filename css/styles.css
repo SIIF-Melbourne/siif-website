@@ -2234,6 +2234,8 @@ blockquote cite {
 .event-content-container.active {
     display: flex;
     animation: fadeIn 0.5s ease;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .event-content {
