@@ -394,6 +394,8 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .index-intro {
@@ -2173,8 +2175,9 @@ blockquote cite {
 
 .events-section {
     margin: 0 auto 80px;
-    max-width: 1200px;
+    max-width: 100%;
     padding: 0 20px;
+    overflow-x: hidden;
 }
 
 .event-tabs {
@@ -2255,9 +2258,12 @@ blockquote cite {
     }
     
     .event-image-wrapper {
+        flex: none;
         width: 100%;
+        max-width: 100%;
         height: 250px;
         margin-bottom: 20px;
+        box-sizing: border-box;
     }
 }
 
