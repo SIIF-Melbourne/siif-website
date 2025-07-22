@@ -19,9 +19,9 @@ header {
     /* background-color: rgb(15, 20, 36); */
     background-color: #ffffff;
     min-height: 80px;
-    opacity: 0.95;
     width: 100vw;
-    z-index: 9999
+    z-index: 9999;
+    display: flex;
 }
 
 .desktop-menu {
@@ -52,6 +52,11 @@ header {
     padding-block: 12px;
 }
 
+.mobile-header {
+    display: none;
+    width: 100vw;
+}
+
 .mobile-menu {
     display: none;
     flex-direction: column;
@@ -60,15 +65,12 @@ header {
     list-style-type: none;
     margin: 0;
     padding-inline: 32px;
-    justify-content: flex-start;
+    justify-content: space-between;
     position: relative;
+    align-items: center;
 }
 
-.menu-overlay {
-    display: none;
-}
-
-.hamburger, .mobile-menu-close-button {
+.menu-overlay, .mobile-menu-close-button {
     display: none;
 }
 
@@ -77,9 +79,24 @@ body.menu-open {
     height: 100vh;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     .desktop-menu {
         display: none;
+    }
+
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 16px;
+        background-color: white;
+        position: relative;
+        z-index: 10000;
+    }
+
+    .mobile-header .Logo {
+        height: 48px;
+        padding: 0;
     }
 
     .mobile-menu-overlay {
