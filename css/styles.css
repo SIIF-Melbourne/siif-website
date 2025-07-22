@@ -2411,19 +2411,20 @@ blockquote cite {
 }
 
 .about-hero p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     max-width: 80%;
     margin: 0 auto;
     line-height: 1.6;
+    font-style: italic;
 }
 
 .about-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .about-section {
     margin: 0 auto 80px;
-    max-width: 1200px;
+    max-width: 80%;
     padding: 0 20px;
 }
 
@@ -2540,7 +2541,7 @@ blockquote cite {
     flex-direction: row;
     gap: 40px;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .values-image {
