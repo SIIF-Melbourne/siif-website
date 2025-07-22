@@ -21,6 +21,7 @@ header {
     min-height: 80px;
     opacity: 0.95;
     width: 100vw;
+    z-index: 9999
 }
 
 .desktop-menu {
@@ -1114,32 +1115,20 @@ td a:hover {
 }
 
 .articles-section {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 40px auto;
     padding: 0 20px;
+    width: 100%;
 }
 
-.articles-section h2 {
-    margin-bottom: 30px;
-    font-size: 28px;
-    color: #333;
-    text-align: center;
-}
-
-/* Publication page article cards */
 .article-cards {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 30px;
-    overflow-x: auto;
     padding: 20px 0;
-    scroll-behavior: smooth;
-    scrollbar-width: thin;
 }
 
 .article-card {
-    flex: 0 0 330px;
     display: flex;
     flex-direction: column;
     border-radius: 12px;
