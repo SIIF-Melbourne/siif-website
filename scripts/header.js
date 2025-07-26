@@ -1,3 +1,8 @@
+const favicon = document.createElement('link');
+favicon.rel = 'icon';
+favicon.href = 'https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//SiiF-Logo.png';
+document.head.appendChild(favicon);
+
 fetch("header.html")
     .then(response => response.text())
     .then(data => {
