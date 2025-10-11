@@ -356,6 +356,7 @@ footer {
 .fab.fa-instagram {
     background: linear-gradient(45deg, #F58529, #E4405F, #D93F8D, #8a3ab9);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
