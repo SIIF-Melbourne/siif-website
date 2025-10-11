@@ -2636,8 +2636,8 @@ blockquote cite {
     flex-wrap: wrap;
     justify-content: center;
     /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
-    gap: 2rem;
-    margin: 3rem 0;
+    margin: 3rem auto;
+    width: 90%;
 }
 
 .sponsor-card {
@@ -2649,6 +2649,7 @@ blockquote cite {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
+    width: 25%;
 }
 
 .sponsor-card:hover {
@@ -2715,6 +2716,10 @@ blockquote cite {
 @media (max-width: 768px) {
     .sponsors-grid {
         grid-template-columns: 1fr;
+    }
+
+    .sponsor-card {
+        width: 100%;
     }
 }
 
