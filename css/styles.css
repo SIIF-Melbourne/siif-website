@@ -2671,7 +2671,7 @@ blockquote cite {
 }
 
 .sponsor-card h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     font-weight: 600;
     color: #333;
 }
@@ -2680,6 +2680,7 @@ blockquote cite {
     text-align: center;
     color: #666;
     font-size: 0.9rem;
+    margin-top: 0.25rem;
 }
 
 .become-sponsor {
