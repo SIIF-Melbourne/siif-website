@@ -166,19 +166,18 @@
           const posts = await response.json();
     
           const feed = document.getElementById('feed');
-          feed.innerHTML = ''; // clear existing posts
+          feed.innerHTML = '';
     
           posts.forEach(post => {
             const postDiv = document.createElement('div');
             postDiv.classList.add('post');
     
-            // Header
+            // Post header
             const headerDiv = document.createElement('div');
             headerDiv.classList.add('post-header');
             headerDiv.textContent = post.username;
             postDiv.appendChild(headerDiv);
     
-            // Carousel container
             const carouselContainer = document.createElement('div');
             carouselContainer.classList.add('carousel-container');
     
@@ -206,7 +205,7 @@
     
               const dot = document.createElement('span');
               dot.classList.add('dot');
-              if (i === 1) dot.classList.add('active');
+              dot.dataset.index = i - 1;
               dotsContainer.appendChild(dot);
             }
     
@@ -219,8 +218,9 @@
             rightBtn.onclick = () => scrollCarousel(rightBtn, 1);
             carouselContainer.appendChild(rightBtn);
     
-            // Append dots
-            carouselContainer.appendChild(dotsContainer);
+            if (post.count > 1) {
+              carouselContainer.appendChild(dotsContainer);
+            }
     
             postDiv.appendChild(carouselContainer);
     
@@ -230,23 +230,20 @@
             captionDiv.textContent = post.caption;
             postDiv.appendChild(captionDiv);
     
-            // Append to feed
             feed.appendChild(postDiv);
-    
-            initCarousels(); // initialize after post is added
           });
     
+          initCarousels();
         } catch (error) {
           console.error('Failed to fetch posts:', error);
         }
       }
     
-      const initCarousels = () => {
+      function initCarousels() {
         document.querySelectorAll('.carousel').forEach(carousel => {
           let isDragging = false;
           let startX;
           let scrollStart;
-    
           let lastX;
           let lastTime;
           let velocity = 0;
@@ -255,16 +252,16 @@
           const rightArrow = carousel.parentElement.querySelector('.arrow.right');
           const dots = carousel.parentElement.querySelectorAll('.dot');
     
+          // Function to update dots, arrows, active states
           function updateCarouselUI() {
             const scrollLeft = carousel.scrollLeft;
-            const imageWidth = carousel.clientWidth;
+            const imageWidth = carousel.clientWidth || 1; // prevent div by zero
             const currentIndex = Math.round(scrollLeft / imageWidth);
     
-            dots.forEach((dot, idx) => {
-              dot.classList.toggle('active', idx === currentIndex);
+            dots.forEach((dot, index) => {
+              dot.classList.toggle('active', index === currentIndex);
             });
     
-            // Arrow visibility
             if (dots.length <= 1) {
               leftArrow.style.display = 'none';
               rightArrow.style.display = 'none';
@@ -274,10 +271,20 @@
             }
           }
     
-          // Initial UI update
+          // Initial UI update immediately
           updateCarouselUI();
     
-          // Drag events
+          dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+              const imageWidth = carousel.clientWidth;
+              const index = parseInt(dot.dataset.index, 10);
+              carousel.scrollTo({
+                left: imageWidth * index,
+                behavior: 'smooth'
+              });
+            });
+          });
+    
           carousel.addEventListener('mousedown', (e) => {
             isDragging = true;
             carousel.classList.add('dragging');
@@ -286,7 +293,6 @@
     
             startX = e.clientX;
             scrollStart = carousel.scrollLeft;
-    
             lastX = e.clientX;
             lastTime = Date.now();
             velocity = 0;
@@ -298,26 +304,25 @@
             if (!isDragging) return;
             isDragging = false;
             carousel.classList.remove('dragging');
-    
             carousel.style.scrollSnapType = 'x mandatory';
             carousel.style.scrollBehavior = 'smooth';
     
             const imageWidth = carousel.clientWidth;
             const currentIndex = Math.round(scrollStart / imageWidth);
-            let momentumDistance = velocity * 200;
     
-            if (momentumDistance > imageWidth) momentumDistance = imageWidth;
-            if (momentumDistance < -imageWidth) momentumDistance = -imageWidth;
+            // Apply momentum scrolling limits
+            let momentumDistance = velocity * 200;
+            momentumDistance = Math.max(-imageWidth, Math.min(momentumDistance, imageWidth));
     
             let tentativeScroll = carousel.scrollLeft - momentumDistance;
             let targetIndex = Math.round(tentativeScroll / imageWidth);
     
+            // Limit target index to adjacent images only
             if (targetIndex > currentIndex + 1) targetIndex = currentIndex + 1;
             if (targetIndex < currentIndex - 1) targetIndex = currentIndex - 1;
     
             const maxIndex = Math.floor((carousel.scrollWidth - carousel.clientWidth) / imageWidth);
-            if (targetIndex > maxIndex) targetIndex = maxIndex;
-            if (targetIndex < 0) targetIndex = 0;
+            targetIndex = Math.max(0, Math.min(targetIndex, maxIndex));
     
             carousel.scrollTo({
               left: targetIndex * imageWidth,
@@ -334,7 +339,7 @@
             const dx = e.clientX - lastX;
             const dt = now - lastTime;
     
-            velocity = dx / dt;
+            velocity = dt > 0 ? dx / dt : 0;
     
             lastX = e.clientX;
             lastTime = now;
@@ -374,7 +379,7 @@
         });
       }
     
-      document.addEventListener('DOMContentLoaded', function () {
+      document.addEventListener('DOMContentLoaded', () => {
         const tabs = document.querySelectorAll('.publication-tab');
         const contentContainers = document.querySelectorAll('.publication-content');
     
@@ -383,9 +388,7 @@
             tabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
     
-            contentContainers.forEach(container => {
-              container.classList.remove('active');
-            });
+            contentContainers.forEach(container => container.classList.remove('active'));
     
             const contentId = this.getAttribute('data-content');
             document.getElementById(contentId).classList.add('active');
@@ -395,6 +398,8 @@
         fetchAndRenderPosts();
       });
     </script>
+    
+    
 
     <style>
       .feed {
@@ -485,14 +490,19 @@
         width: 10px;
         height: 10px;
         margin: 0 4px;
-        background-color: #ccc;
+        background-color: #aaa; /* more visible than #ccc */
         border-radius: 50%;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, transform 0.3s;
+        opacity: 0.7;
       }
 
       .carousel-dots .dot.active {
         background-color: #333;
+        opacity: 1;
+        transform: scale(1.2);
       }
+
+
 
 
     </style>
