@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="scripts/header.js" defer></script>
     <script src="scripts/footer.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="scripts/insta-feed.js" defer></script>
 </head>
 <body>
     <section class="publications-intro">
@@ -127,298 +129,41 @@
                 <!-- Post 1 -->
                 <div class="post">
                   <div class="post-header">user123</div>
-                  <div class="carousel-container">
-                    <button class="arrow left" onclick="scrollCarousel(this, -1)">❮</button>
-                    <div class="carousel">
-                      <img src="http://127.0.0.1:5000/image?blob_name=DPk12u4k1g9-01" alt="Image 1" draggable="false"/>
-                      <img src="http://127.0.0.1:5000/image?blob_name=DPk12u4k1g9-02" alt="Image 2" draggable="false"/>
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <img class="swiper-slide" src="http://127.0.0.1:5000/image?blob_name=DPk12u4k1g9-01" alt="Image 1" draggable="false"/>
+                      <img class="swiper-slide" src="http://127.0.0.1:5000/image?blob_name=DPk12u4k1g9-02" alt="Image 2" draggable="false"/>
                     </div>
-                    <button class="arrow right" onclick="scrollCarousel(this, 1)">❯</button>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-pagination"></div>
                   </div>
                   <div class="post-caption">Loving the view! 🏞️</div>
                 </div>
-              
-                <!-- Post 2 -->
-                <div class="post">
-                  <div class="post-header">naturelover</div>
-                  <div class="carousel-container">
-                    <button class="arrow left" onclick="scrollCarousel(this, -1)">❮</button>
-                    <div class="carousel">
-                      <img src="http://127.0.0.1:5000/image?blob_name=DPsMsRJE6sJ-01" alt="Image 1" draggable="false"/>
-                      <img src="http://127.0.0.1:5000/image?blob_name=DPsMsRJE6sJ-02" alt="Image 2" draggable="false"/>
-                      <img src="http://127.0.0.1:5000/image?blob_name=DPsMsRJE6sJ-03" alt="Image 3" draggable="false"/>
-                    </div>
-                    <button class="arrow right" onclick="scrollCarousel(this, 1)">❯</button>
-                  </div>
-                  <div class="post-caption">Adventure continues 🌄</div>
-                </div>
-              
-              </div>
+            </div>
         </div>
     </main>
 
     <footer></footer>
-    
+  
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script>
-async function fetchAndRenderPosts() {
-  try {
-    const response = await fetch('http://127.0.0.1:5000/image?blob_name=_metadata');
-    const posts = await response.json();
-    const feed = document.getElementById('feed');
-    feed.innerHTML = '';
-    posts.forEach(post => {
-      const postDiv = document.createElement('div');
-      postDiv.classList.add('post');
-
-      // --- New: Title and Date Header Bar ---
-      const headerBar = document.createElement('div');
-      headerBar.classList.add('post-header-bar');
-      const titleDiv = document.createElement('div');
-      titleDiv.classList.add('post-title');
-      titleDiv.textContent = post.title || "Untitled Post";
-      const timeDiv = document.createElement('div');
-      timeDiv.classList.add('post-time');
-      if (post.date) {
-        const dateObj = new Date(post.date);
-        timeDiv.textContent = dateObj.toLocaleString(undefined, {
-          year: 'numeric',
-          month: 'short',
-          day: 'numeric',
-          hour: '2-digit',
-          minute: '2-digit',
-        });
-      } else {
-        timeDiv.textContent = '';
-      }
-      headerBar.appendChild(titleDiv);
-      headerBar.appendChild(timeDiv);
-      postDiv.appendChild(headerBar);
-
-      // Post username header
-      const headerDiv = document.createElement('div');
-      headerDiv.classList.add('post-header');
-      headerDiv.textContent = post.username;
-      postDiv.appendChild(headerDiv);
-
-      const carouselContainer = document.createElement('div');
-      carouselContainer.classList.add('carousel-container');
-
-      // Left arrow
-      const leftBtn = document.createElement('button');
-      leftBtn.classList.add('arrow', 'left');
-      leftBtn.innerHTML = '❮';
-      leftBtn.onclick = () => scrollCarousel(leftBtn, -1);
-      carouselContainer.appendChild(leftBtn);
-
-      // Carousel div
-      const carouselDiv = document.createElement('div');
-      carouselDiv.classList.add('carousel');
-
-      // Dots container
-      const dotsContainer = document.createElement('div');
-      dotsContainer.classList.add('carousel-dots');
-
-      for (let i = 1; i <= post.count; i++) {
-        const img = document.createElement('img');
-        img.src = `http://127.0.0.1:5000/image?blob_name=${post.id}-${i.toString().padStart(2, '0')}`;
-        img.alt = `Image ${i}`;
-        img.draggable = false;
-        carouselDiv.appendChild(img);
-
-        const dot = document.createElement('span');
-        dot.classList.add('dot');
-        dot.dataset.index = i - 1;
-        dotsContainer.appendChild(dot);
-      }
-      carouselContainer.appendChild(carouselDiv);
-
-      // Right arrow
-      const rightBtn = document.createElement('button');
-      rightBtn.classList.add('arrow', 'right');
-      rightBtn.innerHTML = '❯';
-      rightBtn.onclick = () => scrollCarousel(rightBtn, 1);
-      carouselContainer.appendChild(rightBtn);
-
-      if (post.count > 1) {
-        carouselContainer.appendChild(dotsContainer);
-      }
-
-      postDiv.appendChild(carouselContainer);
-
-      // Description
-      if (post.description) {
-        const descriptionDiv = document.createElement('div');
-        descriptionDiv.classList.add('post-description');
-        descriptionDiv.textContent = post.description;
-        postDiv.appendChild(descriptionDiv);
-      }
-
-      feed.appendChild(postDiv);
-    });
-    initCarousels();
-  } catch (error) {
-    console.error('Failed to fetch posts:', error);
-  }
-}
-
-function initCarousels() {
-  document.querySelectorAll('.carousel').forEach(carousel => {
-    let isDragging = false;
-    let startX;
-    let scrollStart;
-    let lastX;
-    let lastTime;
-    let velocity = 0;
-
-    const leftArrow = carousel.parentElement.querySelector('.arrow.left');
-    const rightArrow = carousel.parentElement.querySelector('.arrow.right');
-    const dots = carousel.parentElement.querySelectorAll('.dot');
-
-    function updateCarouselUI() {
-      const scrollLeft = carousel.scrollLeft;
-      const imageWidth = carousel.clientWidth || 1;
-      const currentIndex = Math.round(scrollLeft / imageWidth);
-
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-
-      if (dots.length <= 1) {
-        leftArrow.style.display = 'none';
-        rightArrow.style.display = 'none';
-      } else {
-        leftArrow.style.display = currentIndex === 0 ? 'none' : 'block';
-        rightArrow.style.display = currentIndex === dots.length - 1 ? 'none' : 'block';
-      }
-    }
-    updateCarouselUI();
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', () => {
-        const imageWidth = carousel.clientWidth;
-        const index = parseInt(dot.dataset.index, 10);
-        carousel.scrollTo({ left: imageWidth * index, behavior: 'smooth' });
-      });
-    });
-
-    carousel.addEventListener('mousedown', (e) => {
-      isDragging = true;
-      carousel.classList.add('dragging');
-      carousel.style.scrollSnapType = 'none';
-      carousel.style.scrollBehavior = 'auto';
-      startX = e.clientX;
-      scrollStart = carousel.scrollLeft;
-      lastX = e.clientX;
-      lastTime = Date.now();
-      velocity = 0;
-      e.preventDefault();
-    });
-
-    document.addEventListener('mouseup', () => {
-      if (!isDragging) return;
-      isDragging = false;
-      carousel.classList.remove('dragging');
-      carousel.style.scrollSnapType = 'x mandatory';
-      carousel.style.scrollBehavior = 'smooth';
-
-      const imageWidth = carousel.clientWidth;
-      const currentIndex = Math.round(scrollStart / imageWidth);
-
-      // Calculate momentum scroll distance
-      let momentumDistance = velocity * 200;
-      // Clamp momentum distance to one image width
-      momentumDistance = Math.max(-imageWidth, Math.min(momentumDistance, imageWidth));
-
-      let tentativeScroll = carousel.scrollLeft - momentumDistance;
-      let targetIndex = Math.round(tentativeScroll / imageWidth);
-
-      // Clamp target index to within one slide move
-      if (targetIndex > currentIndex + 1) targetIndex = currentIndex + 1;
-      if (targetIndex < currentIndex - 1) targetIndex = currentIndex - 1;
-
-      const maxIndex = Math.floor((carousel.scrollWidth - carousel.clientWidth) / imageWidth);
-      targetIndex = Math.max(0, Math.min(targetIndex, maxIndex));
-
-      carousel.scrollTo({ left: targetIndex * imageWidth, behavior: 'smooth' });
-      updateCarouselUI();
-    });
-
-    document.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-
-      const now = Date.now();
-      const dx = e.clientX - lastX;
-      const dt = now - lastTime;
-      velocity = dt > 0 ? dx / dt : 0;
-      lastX = e.clientX;
-      lastTime = now;
-
-      const deltaX = e.clientX - startX;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      const imageWidth = carousel.clientWidth;
-
-      let desiredScroll = scrollStart - deltaX;
-
-      // Clamp desiredScroll to prevent over-scrolling beyond one image at either edge
-      const minScroll = Math.max(0, scrollStart - imageWidth);
-      const maxAllowedScroll = Math.min(maxScroll, scrollStart + imageWidth);
-
-      if (desiredScroll < minScroll) desiredScroll = minScroll;
-      if (desiredScroll > maxAllowedScroll) desiredScroll = maxAllowedScroll;
-
-      carousel.scrollLeft = desiredScroll;
-    });
-
-    carousel.addEventListener('scroll', () => {
-      requestAnimationFrame(updateCarouselUI);
-    });
-
-    // Prevent default dragstart behavior on images to avoid glitches
-    carousel.querySelectorAll('img').forEach(img => {
-      img.setAttribute('draggable', 'false');
-      img.addEventListener('dragstart', e => e.preventDefault());
-      // **Fix for last image glitch: stop propagation of click events on last image**
-      // We'll stop the click event on the last image so it doesn't trigger unwanted carousel scroll
-      // Identify last image in the carousel
-      const images = Array.from(carousel.querySelectorAll('img'));
-      const lastImage = images[images.length - 1];
-      if (img === lastImage) {
-        img.addEventListener('click', e => {
-          // Prevent click event bubbling that triggers carousel scroll back
-          e.stopPropagation();
-        });
-      }
-    });
-  });
-}
-
-function scrollCarousel(button, direction) {
-  const carousel = button.parentElement.querySelector('.carousel');
-  const imageWidth = carousel.clientWidth;
-  carousel.scrollBy({ left: imageWidth * direction, behavior: 'smooth' });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.publication-tab');
-  const contentContainers = document.querySelectorAll('.publication-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function () {
-      tabs.forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
-      contentContainers.forEach(container => container.classList.remove('active'));
-      const contentId = this.getAttribute('data-content');
-      document.getElementById(contentId).classList.add('active');
-    });
-  });
-
-  fetchAndRenderPosts();
-});
-</script>
-
-    
-    
-    
+      // var swiper = new Swiper(".swiper", {
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //   },
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      //   },
+      //   on: {
+      //     slideChange: function () {
+      //       swiper.allowSlidePrev = !this.isBeginning
+      //       swiper.allowSlideNext = !this.isEnd
+      //     }
+      //   }
+      // });
+    </script>
 
     <style>
       .feed {
@@ -436,63 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .post-header {
         font-weight: bold;
         margin-bottom: 10px;
-      }
-
-      .carousel-container {
-        position: relative;
-      }
-
-      .carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none; /* Firefox */
-        scroll-behavior: smooth; /* enables smooth scroll for buttons & snap */
-        cursor: grab;
-        cursor: -webkit-grab;
-      }
-
-      .carousel.dragging {
-        cursor: grabbing;
-        cursor: -webkit-grabbing;
-      }
-
-      .carousel::-webkit-scrollbar {
-        display: none; /* Chrome, Safari */
-      }
-
-      .carousel img {
-        flex-shrink: 0;
-        width: 100%;
-        scroll-snap-align: start;
-        object-fit: cover;
-        pointer-events: none; /* prevents drag interference */
-        user-select: none;
-        -webkit-user-drag: none;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-      }
-
-      .arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 1;
-      }
-
-      .arrow.left {
-        left: 5px;
-      }
-
-      .arrow.right {
-        right: 5px;
       }
 
       .post-caption {
@@ -540,6 +228,41 @@ document.addEventListener('DOMContentLoaded', () => {
         white-space: nowrap;
       }
 
+      .pagination-wrapper {
+        position: absolute;
+        bottom: 10px; /* Distance from the bottom */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        border-radius: 25px; /* Rounded corners */
+        padding: 5px; /* Padding around pagination */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10; /* Ensure the wrapper is above the swiper container */
+      }
+
+      /* Ensure the swiper pagination is on top */
+      .swiper-pagination {
+        position: relative;
+        z-index: 20; /* Make sure pagination dots are on top of the wrapper */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: auto !important;
+      }
+
+      /* Style for the swiper pagination bullets */
+      .swiper-pagination-bullet {
+        background: #9e9e9e; /* White bullets */
+        opacity: 1;
+        transition: transform 0.3s ease;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: #f5f5f5; /* Active bullet color */
+        transform: scale(1.3);
+      }
     </style>
 </body>
 </html>
