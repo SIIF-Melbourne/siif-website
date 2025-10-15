@@ -166,6 +166,11 @@
     </script>
 
     <style>
+      @font-face {
+        font-family: 'League Spartan';
+        src: url(/assets/fonts/LeagueSpartan-Regular.woff2) format('opentype');
+      }
+
       .feed {
         max-width: 600px;
         margin: auto;
@@ -174,17 +179,40 @@
 
       .post {
         border: 1px solid #ccc;
-        padding: 10px;
         margin-bottom: 20px;
+        border-radius: 25px;
+        overflow: hidden;
+        font-family: 'League Spartan', sans-serif;
       }
 
       .post-header {
-        font-weight: bold;
-        margin-bottom: 10px;
+        /* font-weight: bold; */
+        height: 50px;
+        font-size: 1rem;
+        color: #eee;
+        display: flex;
+        align-items: center;
+        background-color: #0f131f;
+        justify-content: space-between;
+        padding: 9px;
+        padding-right: 18px;
+      }
+
+      .post-profile {
+        display: flex;
+        align-items: center;
+      }
+
+      .post-icon {
+        height: 64px;
+        /* border-radius: 16px; */
+        margin-left: 18px; 
+        margin-right: 9px;
       }
 
       .post-caption {
-        margin-top: 10px;
+        padding: 20px;
+        white-space: pre-wrap;
       }
 
       .carousel-dots {
