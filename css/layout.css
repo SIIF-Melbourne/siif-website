@@ -1,0 +1,11 @@
+header {
+    color: white;
+    align-items: center;
+    /* background-color: rgb(15, 20, 36); */
+    background-color: #ffffff;
+    min-height: 80px;
+    width: 100vw;
+    z-index: 9999;
+    display: flex;
+}
+
