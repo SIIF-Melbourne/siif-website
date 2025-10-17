@@ -1,0 +1,45 @@
+.site-nav {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav__logo {
+  height: 48px;
+}
+
+.site-nav__link {
+  display: none;
+  text-decoration: none;
+  /* Could make this a variable */
+  color: rgb(15, 20, 36);
+  font-size: 12px;
+}
+
+.site-nav__hamburger {
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .site-nav {
+    justify-content: flex-start;
+    gap: 5rem;
+    padding-left: 80px;
+  }  
+
+  .site-nav__link {
+    display: block;
+  }
+
+  .site-nav__logo {
+    height: 40px;
+  }
+
+  .site-nav__hamburger {
+    display: none;
+  }
+}
