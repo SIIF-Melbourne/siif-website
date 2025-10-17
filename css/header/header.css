@@ -43,3 +43,43 @@
     display: none;
   }
 }
+
+/* Mobile overlay */
+
+.site-overlay {
+  position: fixed;       /* or absolute, but fixed is better for full-screen */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.site-overlay--active {
+  display: flex;
+}
+
+.site-overlay__close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: rgb(15, 20, 36)
+}
+
+.site-overlay__logo {
+  height: 6rem;
+}
+
+.site-nav__link--overlay {
+  display: block;
+  font-size: 1.5rem;
+}

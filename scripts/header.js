@@ -1,33 +1,25 @@
-const favicon = document.createElement('link');
-favicon.rel = 'icon';
-favicon.href = 'https://lshtgdpdskhqqxdcwpjo.supabase.co/storage/v1/object/public/photos//SiiF-Logo.png';
-document.head.appendChild(favicon);
-
-fetch("header.html")
-    .then(response => response.text())
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("header.html")
+    .then(response => {
+      if (!response.ok) throw new Error("Network error");
+      return response.text();
+    })
     .then(data => {
-        document.querySelector("header").innerHTML = data;
-        
-        const hamburger = document.querySelector('.hamburger');
-        const closeButton = document.querySelector('.mobile-menu-close-button');
-        const overlay = document.querySelector('.mobile-menu-overlay');
+      const header = document.querySelector("header");
+      if (!header) throw new Error("No <header> element found in document");
 
-        if (hamburger && closeButton && overlay) {
-            hamburger.addEventListener('click', () => {
-                overlay.classList.add('active');
-                hamburger.classList.add('hide');
-                document.body.classList.add('menu-open');
-            });
-
-            closeButton.addEventListener('click', () => {
-                overlay.classList.remove('active');
-                hamburger.classList.remove('hide');
-                document.body.classList.remove('menu-open');
-            });
-        } else {
-            console.error("Hamburger, overlay, or close button not found in DOM.");
-        }
+      header.innerHTML = data;
     })
     .catch(error => {
-        console.error("Error loading header:", error);
+      console.error("Error loading header:", error);
     });
+});
+
+const toggleOverlay = () => {
+  const overlay = document.querySelector(".site-overlay")
+  if (overlay.classList.contains("site-overlay--active")) {
+    overlay.classList.remove("site-overlay--active")
+  } else {
+    overlay.classList.add("site-overlay--active")
+  }
+}
