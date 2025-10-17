@@ -17,9 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const toggleOverlay = () => {
   const overlay = document.querySelector(".site-overlay")
-  if (overlay.classList.contains("site-overlay--active")) {
-    overlay.classList.remove("site-overlay--active")
-  } else {
-    overlay.classList.add("site-overlay--active")
-  }
+  overlay.classList[overlay.classList.contains("site-overlay--active") ? "remove" : "add"]("site-overlay--active")
 }
