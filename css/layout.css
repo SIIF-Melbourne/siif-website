@@ -7,8 +7,13 @@ header {
     color: var(--dark-blue);
 }
 
-.heading_h2 {
+.heading_h1 {
     font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.heading_h2 {
+    font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
