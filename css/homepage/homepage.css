@@ -42,13 +42,14 @@
 } */
 
 .values__card {
-  width: 30%;
+  width: 100%;
 }
 
 .values__container {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -62,5 +63,9 @@
 
   .goals__card {
     width: calc(50% - 0.5rem);
+  }
+
+  .values__card {
+    width: 30%;
   }
 }
