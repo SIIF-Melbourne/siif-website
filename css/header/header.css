@@ -1,5 +1,5 @@
 .site-nav {
-  width: 100%;
+  width: min(100%, 64rem);
   padding: 1rem;
   display: flex;
   align-items: center;
@@ -24,17 +24,11 @@
 
 @media (min-width: 768px) {
   .site-nav {
-    justify-content: flex-start;
-    gap: 5rem;
-    padding-left: 4rem;
+    padding: 1rem 4rem;
   }  
 
   .site-nav__link {
     display: block;
-  }
-
-  .site-nav__logo {
-    height: 3rem;
   }
 
   .site-nav__hamburger {
