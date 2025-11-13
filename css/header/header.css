@@ -13,9 +13,7 @@
 .site-nav__link {
   display: none;
   text-decoration: none;
-  /* Could make this a variable */
-  color: rgb(15, 20, 36);
-  font-size: 12px;
+  color: var(--dark-blue);
 }
 
 .site-nav__hamburger {
@@ -52,7 +50,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #eee;
+  background-color: var(--off-white);
   display: none;
   justify-content: center;
   align-items: center;
@@ -72,7 +70,7 @@
   border: none;
   font-size: 28px;
   cursor: pointer;
-  color: rgb(15, 20, 36)
+  color: var(--dark-blue);
 }
 
 .site-overlay__logo {
