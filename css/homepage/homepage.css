@@ -37,9 +37,19 @@
   justify-content: space-between;
 }
 
-/* .goals__card {
-  width: calc(50% - 0.5rem);
+/* .values__photo {
+  width: 20rem;
 } */
+
+.values__card {
+  width: 30%;
+}
+
+.values__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
 
 @media (min-width: 768px) {
   .mission {
