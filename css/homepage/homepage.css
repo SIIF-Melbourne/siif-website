@@ -31,6 +31,16 @@
   width: 20rem;
 }
 
+.goals__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* .goals__card {
+  width: calc(50% - 0.5rem);
+} */
+
 @media (min-width: 768px) {
   .mission {
     flex-direction: row;
@@ -40,4 +50,7 @@
     padding-top: 3rem;
   }
 
+  .goals__card {
+    width: calc(50% - 0.5rem);
+  }
 }
