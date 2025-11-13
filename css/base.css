@@ -17,5 +17,6 @@ body {
 
 :root {
     --dark-blue: rgb(15, 20, 36);
-    --off-white: rgb(253, 253, 253)
+    --off-white: rgb(253, 253, 253);
+    --medium-grey: rgb(100, 100, 100);
 }

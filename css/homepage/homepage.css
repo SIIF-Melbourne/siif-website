@@ -45,6 +45,22 @@
   width: 100%;
 }
 
+.sponsors__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsors__logo {
+  max-height: 12rem;
+}
+
+.sponsors__grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .values__container {
   display: flex;
   justify-content: space-between;
@@ -67,5 +83,9 @@
 
   .values__card {
     width: 30%;
+  }
+
+  .sponsors__card {
+    width: calc(50% - 0.5rem);
   }
 }
