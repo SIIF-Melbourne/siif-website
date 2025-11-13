@@ -15,7 +15,29 @@
   width: 80%;
 }
 
-.homepage-main {
-  padding: 4rem 12rem;
+.homepage {
+  padding: 4rem min(12rem, 15%);
   width: 100%;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mission__photo {
+  width: 20rem;
+}
+
+@media (min-width: 768px) {
+  .mission {
+    flex-direction: row;
+  }
+
+  .mission__photo {
+    padding-top: 3rem;
+  }
+
 }
