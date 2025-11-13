@@ -1,0 +1,21 @@
+.about-hero {
+  height: 12rem;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
+}
+
+.about-hero__text {
+  color: var(--off-white);
+  font-size: 1.3rem;
+  font-style: italic;
+  text-align: center;
+  width: 80%;
+}
+
+.homepage-main {
+  padding: 4rem 12rem;
+  width: 100%;
+}
