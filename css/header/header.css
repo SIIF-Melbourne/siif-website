@@ -1,6 +1,7 @@
 .site-nav {
   width: min(100%, 64rem);
   padding: 1rem;
+  padding-right: calc(2rem - 100vw + 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,6 +21,8 @@
   border: none;
   font-size: 2rem;
   cursor: pointer;
+  text-decoration: none;
+  color: var(--dark-blue);
 }
 
 @media (min-width: 768px) {
@@ -45,26 +48,23 @@
   width: 100vw;
   height: 100vh;
   background-color: var(--off-white);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   gap: 3rem;
-}
-
-.site-overlay--active {
-  display: flex;
+  border: none;
 }
 
 .site-overlay__close-button {
   position: absolute;
   top: 1rem;
-  right: 1rem;
-  background: none;
+  right: 2rem;
   border: none;
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   color: var(--dark-blue);
+  text-decoration: none;
 }
 
 .site-overlay__logo {

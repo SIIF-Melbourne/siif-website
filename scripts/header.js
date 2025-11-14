@@ -14,8 +14,3 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading header:", error);
     });
 });
-
-const toggleOverlay = () => {
-  const overlay = document.querySelector(".site-overlay")
-  overlay.classList[overlay.classList.contains("site-overlay--active") ? "remove" : "add"]("site-overlay--active")
-}

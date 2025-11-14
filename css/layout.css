@@ -1,6 +1,6 @@
 header {
     color: var(--off-white);
-    width: 100vw;
+    width: 100%;
 }
 
 .heading {
@@ -27,3 +27,7 @@ header {
     margin-top: 0.25rem;
     color: var(--medium-grey);
 }
+
+dialog:not(:target):not([open]) { display: none; }
+
+body:has(dialog:target) { overflow: hidden; }
