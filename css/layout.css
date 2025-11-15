@@ -23,6 +23,26 @@
     color: var(--medium-grey);
 }
 
+.hero-banner {
+    padding: 4rem 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+}
+  
+.hero-banner__text {
+    color: var(--off-white);
+    font-size: 1.3rem;
+    text-align: center;
+    width: 80%;
+}
+
+.hero-banner__text--quote {
+    font-style: italic;
+}
+
 dialog:not(:target):not([open]) { display: none; }
 
 body:has(dialog:target) { overflow: hidden; }
