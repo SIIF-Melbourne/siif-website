@@ -1,0 +1,30 @@
+.committee {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.committee__team {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.committee__row {
+  display: flex;
+  justify-content: center;
+  gap: 8rem;
+}
+
+.committee__photo {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.committee__member {
+  min-width: 12rem;
+}
