@@ -42,15 +42,17 @@
     color: var(--off-white);
     font-size: 1.2rem;
     text-align: center;
-    width: 48rem;
+    width: min(80%, 48rem);
     line-height: 1.6;
+    text-wrap: wrap;
 }
 
 .hero-banner__heading {
     color: var(--off-white);
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 1rem;
+    /* I generally try to use padding over margin wherever possible, but this just feels wrong with text */
+    margin: 0 1rem 1rem
 }
 
 .hero-banner__text--quote {
