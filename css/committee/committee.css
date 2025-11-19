@@ -1,21 +1,23 @@
 .committee {
-  padding: 2rem 0;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  width: 100%;
 }
 
 .committee__team {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   text-align: center;
+  align-items: center;
 }
 
 .committee__row {
   display: flex;
-  justify-content: center;
-  gap: 8rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 80%;
 }
 
 .committee__photo {
@@ -27,4 +29,5 @@
 
 .committee__member {
   min-width: 12rem;
+  padding-bottom: 2rem;
 }
