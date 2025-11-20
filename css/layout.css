@@ -52,7 +52,7 @@
     font-size: 3rem;
     text-align: center;
     /* I generally try to use padding over margin wherever possible, but this just feels wrong with text */
-    margin: 0 1rem 1rem
+    margin: 0 2rem
 }
 
 .hero-banner__text--quote {
