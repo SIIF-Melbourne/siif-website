@@ -2728,3 +2728,28 @@ blockquote cite {
     margin: 20px 0;
 }
 
+.year-picker {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.year-picker__year {
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;  
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border: thin solid black;
+  transition: all 0.2s ease-out;
+}
+
+.year-picker__year:hover {
+  border: thin solid rgb(15, 20, 36);
+  background-color: rgb(15, 20, 36);
+  color: white;
+}
+
+.year-picker__year--active {
+  border: thin solid rgb(15, 20, 36);
+  background-color: rgb(15, 20, 36);
+  color: white;
+}
